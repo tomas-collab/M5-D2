@@ -1,8 +1,10 @@
 import express from 'express'
+import cors from 'cors'
 import listEndPoints from 'express-list-endpoints'
 import authorsRouter from './services/authors/index.js'
 const server = express()
-const port = 3001
+const port = 3000
+server.use(cors())
 server.use(express.json())
 
 server.use('/authors', authorsRouter)
